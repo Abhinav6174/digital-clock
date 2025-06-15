@@ -9,5 +9,5 @@ import { Clock } from "./clock/clock";
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'myapp';
+  protected title = 'Digital Column Clock';
 }

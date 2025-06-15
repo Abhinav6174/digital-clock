@@ -2,7 +2,7 @@
 body{
     background-color: #1E2A3C;
     scrollbar-width: none;
-    font-family: "Dosis", sans-serif;
+    margin: 0;
 }
 
 h1{
@@ -11,10 +11,12 @@ h1{
     justify-content: center;
     align-items: center;
     color: #F7FAFC;
+    font-family: "Dosis", sans-serif;
 }
 
 
 html, body {
+    height: 100%;
     overflow: hidden; /* Prevents scrolling */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer and Edge */

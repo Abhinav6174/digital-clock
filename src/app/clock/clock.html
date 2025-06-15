@@ -1,3 +1,25 @@
+<div class="timezone-selector">
+    <select [(ngModel)]="selectedTimezone" (ngModelChange)="onTimezoneChange($event)" class="timezone-dropdown">
+        <option *ngFor="let option of timezones" [value]="option.timezone">
+            {{ option.city }}
+        </option>
+    </select>
+</div>
+
+<div class="timezone-selector form-group text-center">
+    <select
+      class="form-select bg-dark text-white w-auto d-inline-block"
+      [(ngModel)]="selectedTimezone"
+      (ngModelChange)="onTimezoneChange($event)"
+    >
+      <option *ngFor="let option of timezones" [value]="option.timezone">
+        {{ option.city }}
+      </option>
+    </select>
+  </div>
+
+<button class="btn btn-primary">abcd</button>
+
 
 <div class="clock">
     <ng-container *ngFor="let digit of currentTimeDigits; let i = index; trackBy: trackByIndex">
@@ -6,7 +28,7 @@
             [style.height.px]="getColumnViewportHeight(i)">
             <div class="highlight"></div>
             <div class="digit-wrapper" [style.marginTop.px]="getMarginTop(digit, i)">
-                <div class="digit" *ngFor="let num of getBarNumbers(i)">
+                <div class="digit" *ngFor="let num of getBarNumbers(i)" [ngClass]="{ 'active-digit': num === digit }">
                     {{ num }}
                 </div>
             </div>
