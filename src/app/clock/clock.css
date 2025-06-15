@@ -4,6 +4,7 @@
     align-items: center;
     height: 75vh;
     font-family: "Dosis", sans-serif;
+    user-select: none;
 }
 
 .digit-column {
@@ -40,6 +41,7 @@
     justify-content: center;
     align-items: center;
     color: #F7FAFC;
+    font-weight: 700;
 }
 
 .highlight {
@@ -91,34 +93,94 @@
 }
 
 .active-digit {
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 800;
+    font-size: 20px;
     color: #ffffff;
-  }
+}
 
-
-/* Timezone selector styling */
-/* .timezone-selector {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    background-color: #1E2A3C;
+.timezone-selector {
+    margin-bottom: 24px;
     padding: 10px;
 }
 
-option{
-    background-color: #1E2A3C;
-} */
+.dropdown-header {
+    font-size: 14px;
+}
 
+.custom-form-label {
+    font-family: "Dosis", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
 
-.timezone-selector {
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-  
-  .form-select {
+.custom-dropdown {
     background-color: #1E2A3C !important;
-    color: white !important;
+    color: #F7FAFC !important;
     border: 1px solid #444;
-    border-radius: 6px;
-  }
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    overflow-y: auto;
+}
+
+.custom-dropdown:hover {
+    background-color: #2D3748;
+    border-color: #22D3EE;
+}
+
+.custom-dropdown:focus {
+    box-shadow: 0 0 0 0.2rem rgba(34, 211, 238, 0.25);
+    border-color: #22D3EE;
+}
+
+.custom-dropdown-menu {
+    background-color: #1E2A3C;
+    border: 1px solid #444;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    height: 300px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.dropdown-item {
+    color: #F7FAFC;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 38px;
+}
+
+.dropdown-item:hover {
+    background-color: #2D3748;
+    color: #22D3EE;
+    border-radius: 10px;
+}
+
+.dropdown-item:active {
+    background-color: #2D3748;
+    color: #ffffff;
+}
+
+.custom-dropdown:active,
+.custom-dropdown:hover,
+.custom-dropdown:focus,
+.custom-dropdown.active {
+    color: #F7FAFC !important;
+    background-color: #2D3748 !important;
+    border-color: #22D3EE !important;
+}
+
+.custom-dropdown {
+    font-family: "Dosis", sans-serif;
+}
+
+.custom-dropdown-menu {
+    font-family: "Dosis", sans-serif;
+}

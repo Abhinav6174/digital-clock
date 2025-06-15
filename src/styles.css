@@ -1,28 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     background-color: #1E2A3C;
-    scrollbar-width: none;
-    margin: 0;
+    margin: 5px;
 }
 
-h1{
+h1 {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #F7FAFC;
     font-family: "Dosis", sans-serif;
+    font-weight: 700;
 }
 
 
-html, body {
+html,
+body {
     height: 100%;
-    overflow: hidden; /* Prevents scrolling */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-/* Chrome, Safari, and newer Edge */
-html::-webkit-scrollbar, body::-webkit-scrollbar {
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
     display: none;
 }

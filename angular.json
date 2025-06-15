@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myapp": {
+    "digital-clock": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -34,6 +34,7 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "docs/browser",
               "budgets": [
                 {
                   "type": "initial",
@@ -60,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "myapp:build:production"
+              "buildTarget": "digital-clock:build:production"
             },
             "development": {
-              "buildTarget": "myapp:build:development"
+              "buildTarget": "digital-clock:build:development"
             }
           },
           "defaultConfiguration": "development"

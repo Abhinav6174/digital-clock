@@ -1,31 +1,37 @@
-<div class="timezone-selector">
-    <select [(ngModel)]="selectedTimezone" (ngModelChange)="onTimezoneChange($event)" class="timezone-dropdown">
-        <option *ngFor="let option of timezones" [value]="option.timezone">
-            {{ option.city }}
-        </option>
-    </select>
+<div class="timezone-selector form-group d-flex align-items-center justify-content-center gap-2">
+    <label class="form-label custom-form-label text-white mb-1" for="timezoneDropdown">
+        Select Place:
+    </label>
+
+    <div class="dropdown">
+        <button class="btn dropdown-toggle custom-dropdown" type="button" id="timezoneDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            {{ getSelectedCityName() }}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark custom-dropdown-menu" aria-labelledby="timezoneDropdown">
+            <ng-container *ngFor="let region of getGroupedRegions()">
+                <li>
+                    <h6 class="dropdown-header">{{ region }}</h6>
+                </li>
+                <li *ngFor="let option of getTimezonesByRegion(region)">
+                    <a class="dropdown-item" href="#"
+                        (click)="onTimezoneChange(option.timezone); $event.preventDefault()">
+                        {{ option.city }}
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+            </ng-container>
+        </ul>
+    </div>
 </div>
-
-<div class="timezone-selector form-group text-center">
-    <select
-      class="form-select bg-dark text-white w-auto d-inline-block"
-      [(ngModel)]="selectedTimezone"
-      (ngModelChange)="onTimezoneChange($event)"
-    >
-      <option *ngFor="let option of timezones" [value]="option.timezone">
-        {{ option.city }}
-      </option>
-    </select>
-  </div>
-
-<button class="btn btn-primary">abcd</button>
-
 
 <div class="clock">
     <ng-container *ngFor="let digit of currentTimeDigits; let i = index; trackBy: trackByIndex">
         <div class="digit-column"
             [ngClass]="{ 'group-gap-right': i === 1 || i === 3, 'group-gap-left': i === 2 || i === 4 }"
-            [style.height.px]="getColumnViewportHeight(i)">
+            [style.height.px]="getColumnViewportHeight()">
             <div class="highlight"></div>
             <div class="digit-wrapper" [style.marginTop.px]="getMarginTop(digit, i)">
                 <div class="digit" *ngFor="let num of getBarNumbers(i)" [ngClass]="{ 'active-digit': num === digit }">
