@@ -1,0 +1,19 @@
+
+<div class="clock">
+    <ng-container *ngFor="let digit of currentTimeDigits; let i = index; trackBy: trackByIndex">
+        <div class="digit-column"
+            [ngClass]="{ 'group-gap-right': i === 1 || i === 3, 'group-gap-left': i === 2 || i === 4 }"
+            [style.height.px]="getColumnViewportHeight(i)">
+            <div class="highlight"></div>
+            <div class="digit-wrapper" [style.marginTop.px]="getMarginTop(digit, i)">
+                <div class="digit" *ngFor="let num of getBarNumbers(i)">
+                    {{ num }}
+                </div>
+            </div>
+        </div>
+        <div *ngIf="i === 1 || i === 3" class="colon-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </ng-container>
+</div>
